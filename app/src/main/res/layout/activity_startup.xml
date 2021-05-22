@@ -13,6 +13,7 @@
         android:layout_height="240dp"
         android:elevation="24dp"
         android:indeterminateTint="@color/pastel_purple"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/main_frame"
+        android:id="@+id/sign_up_frame"
         android:layout_width="match_parent"
         android:layout_height="@dimen/nil_dp"
         app:layout_constraintBottom_toBottomOf="parent"
