@@ -3,6 +3,7 @@ package com.coolcats.catsnotesexchange.util
 class Konstants {
 
     companion object{
+
         val SUBJECT_ARRAY = arrayListOf<String>(
             "History",
             "Language",
@@ -12,6 +13,7 @@ class Konstants {
             "Computing",
             "Other"
             )
+
     }
 
 }

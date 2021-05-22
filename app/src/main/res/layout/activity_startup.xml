@@ -7,15 +7,26 @@
     android:background="@color/pastel_blue"
     tools:context=".view.StartUpActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_indicator"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:elevation="24dp"
+        android:indeterminateTint="@color/pastel_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        style="@style/title_theme"
         android:id="@+id/app_title_txt"
+        style="@style/title_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/main_frame"
