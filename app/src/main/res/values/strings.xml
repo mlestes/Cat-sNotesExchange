@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Cat\'s Notes Exchange</string>
+    <string name="user_name">User Name</string>
+    <string name="current_user_login">Current User Login</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="new_user_click_here">New user? CLICK HERE</string>
+    <string name="new_student">New Student</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="new_note">New Note</string>
+    <string name="notes">Notes:</string>
+    <string name="note_title">Note Title</string>
 </resources>

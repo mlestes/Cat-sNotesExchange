@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pastel_blue"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="4dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/user_avatar_image"
+        android:layout_height="64dp"
+        android:layout_width="64dp"
+        android:layout_margin="@dimen/std_dim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_view"
+        app:strokeColor="@color/pastel_pink"
+        app:strokeWidth="4dp"
+        tools:src="@drawable/ic_no_avatar_img" />
+
+    <TextView
+        android:id="@+id/user_name_txt"
+        style="@style/list_item_title_txt"
+        android:layout_width="@dimen/nil_dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_dim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/add_note_image"
+        app:layout_constraintStart_toEndOf="@id/user_avatar_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="UserName" />
+
+    <ImageView
+        android:id="@+id/add_note_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="@dimen/std_dim"
+        android:src="@drawable/ic_baseline_note_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
