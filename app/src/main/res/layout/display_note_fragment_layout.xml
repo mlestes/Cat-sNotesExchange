@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/pastel_blue"
+    android:elevation="4dp"
+    android:focusable="true"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/show_note_title_txt"
+        style="@style/list_item_title_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_dim"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="The Beginning of the Modern Era" />
+
+    <TextView
+        android:id="@+id/snote_subject_txt"
+        style="@style/list_item_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_dim"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_note_title_txt"
+        tools:text="History" />
+
+    <TextView
+        android:id="@+id/note_author_txt"
+        style="@style/list_item_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/std_dim"
+        app:layout_constraintStart_toEndOf="@id/snote_subject_txt"
+        app:layout_constraintTop_toBottomOf="@id/show_note_title_txt"
+        tools:text="Submitted by: UserName" />
+
+    <TextView
+        android:id="@+id/note_body_txt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nil_dp"
+        android:layout_margin="@dimen/std_dim"
+        android:background="@drawable/note_input_body_bg"
+        android:fontFamily="cursive"
+        android:padding="@dimen/std_dim"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/snote_subject_txt"
+        tools:text="Many notes to be taken here, as this is one extremely complicated topic that spans over the course of millennia." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

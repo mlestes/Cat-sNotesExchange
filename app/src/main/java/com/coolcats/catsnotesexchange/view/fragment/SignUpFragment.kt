@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.coolcats.catsnotesexchange.R
 import com.coolcats.catsnotesexchange.mod.User
 import com.coolcats.catsnotesexchange.util.Util.Companion.getUserDB
+import com.coolcats.catsnotesexchange.util.Util.Companion.myLog
 import com.coolcats.catsnotesexchange.util.Util.Companion.showError
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.new_user_fragment_layout.*
@@ -39,14 +40,19 @@ class SignUpFragment : Fragment() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailInput, pwdInput)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            val key = userReference.push().key ?: ""
+                            val key = FirebaseAuth.getInstance().currentUser?.uid ?: ""
                             val user = User(key, usernameInput)
                             userReference.child(key).setValue(user)
                             NotesDialogFragment.newInstance(
                                 "E-mail Verification",
                                 "Please check e-mail address $emailInput for verification link."
-                            ).show(childFragmentManager, NotesDialogFragment.tag)
-                            childFragmentManager.popBackStack()
+                            ).show(
+                                requireActivity().supportFragmentManager,
+                                NotesDialogFragment.tag
+                            )
+                            FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
+                            val count = requireActivity().supportFragmentManager.backStackEntryCount
+                            for (i in 0..count) requireActivity().supportFragmentManager.popBackStack()
                         }
                     }
             }

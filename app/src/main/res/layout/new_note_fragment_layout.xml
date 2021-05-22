@@ -27,7 +27,7 @@
 
     <Spinner
         android:id="@+id/subject_spinner"
-        android:layout_width="112dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/std_dim"
         android:background="@color/pastel_green"

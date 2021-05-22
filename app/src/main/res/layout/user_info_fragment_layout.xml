@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/pastel_blue"
     android:clickable="true"
-    android:focusable="true"
-    android:elevation="4dp">
+    android:focusable="true">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/user_avatar_image"
@@ -18,8 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/rounded_image_view"
-        app:strokeColor="@color/pastel_pink"
-        app:strokeWidth="4dp"
         tools:src="@drawable/ic_no_avatar_img" />
 
     <TextView
