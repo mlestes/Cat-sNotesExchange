@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pastel_blue"
+    android:clickable="true"
     android:elevation="4dp"
-    android:focusable="true"
-    android:clickable="true">
+    android:focusable="true">
 
     <TextView
         android:id="@+id/show_note_title_txt"
@@ -38,6 +38,44 @@
         app:layout_constraintTop_toBottomOf="@id/show_note_title_txt"
         tools:text="Submitted by: UserName" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/edit_body_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/std_dim"
+        android:background="@color/pastel_green"
+        android:src="@drawable/ic_edit"
+        app:contentPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/note_body_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_view" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/okay_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/std_dim"
+        android:background="@color/pastel_green"
+        android:src="@drawable/ic_ok"
+        android:visibility="invisible"
+        app:contentPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/note_body_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded_image_view" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/cnx_body_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/std_dim"
+        android:background="@color/pastel_red"
+        android:src="@drawable/ic_cancel"
+        android:visibility="invisible"
+        app:contentPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/note_body_txt"
+        app:layout_constraintEnd_toStartOf="@id/okay_btn"
+        app:shapeAppearanceOverlay="@style/rounded_image_view" />
+
     <TextView
         android:id="@+id/note_body_txt"
         android:layout_width="match_parent"
@@ -46,12 +84,29 @@
         android:background="@drawable/note_input_body_bg"
         android:fontFamily="cursive"
         android:padding="@dimen/std_dim"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:scrollbars="vertical"
-        android:scrollbarStyle="insideOverlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/snote_subject_txt"
         tools:text="Many notes to be taken here, as this is one extremely complicated topic that spans over the course of millennia." />
+
+    <EditText
+        android:id="@+id/note_edit_txt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nil_dp"
+        android:layout_margin="@dimen/std_dim"
+        android:background="@drawable/note_input_body_bg"
+        android:fontFamily="cursive"
+        android:padding="@dimen/std_dim"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:gravity="top|start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/snote_subject_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,8 +24,6 @@ class CreateNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var name: String
     private lateinit var subject: String
-    private val user = getLoggedInUser()
-    private val userReference = getUserDB()
     private val noteReference = getNotesDB()
     private val viewModel: AppViewModel by activityViewModels()
 
@@ -50,14 +48,8 @@ class CreateNoteFragment : Fragment(), AdapterView.OnItemSelectedListener {
         subject_spinner.adapter = adapter
         subject_spinner.onItemSelectedListener = this
 
-        user?.uid?.let {
-            userReference.child(it).get().addOnSuccessListener {
-                val currentUser = it.getValue(User::class.java)
-                name = currentUser?.userName ?: ""
-            }.addOnFailureListener {
-                myLog(it.localizedMessage)
-            }
-        }
+        val user = viewModel.userData.value
+        name = user?.userName ?: "No User Data"
 
         note_submit_btn.setOnClickListener {
             val title = note_title_input.text.toString()

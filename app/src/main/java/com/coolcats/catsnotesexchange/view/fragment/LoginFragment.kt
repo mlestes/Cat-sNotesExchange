@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.coolcats.catsnotesexchange.R
 import com.coolcats.catsnotesexchange.util.Util.Companion.showError
+import com.coolcats.catsnotesexchange.viewmodel.AppViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.login_fragment_layout.*
 
 class LoginFragment : Fragment() {
+
+    private val viewModel: AppViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,11 +48,12 @@ class LoginFragment : Fragment() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(emailInput, pwdInput)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            if (FirebaseAuth.getInstance().currentUser?.isEmailVerified == true)
+                            if (FirebaseAuth.getInstance().currentUser?.isEmailVerified == true) {
+                                viewModel.loginStatus.value = true
                                 childFragmentManager.beginTransaction()
                                     .replace(R.id.sign_up_frame, HomeFragment())
                                     .commit()
-                            else
+                            } else
                                 NotesDialogFragment.newInstance(
                                     "E-mail Verification",
                                     "Please check e-mail address $emailInput for a link to verify your account"

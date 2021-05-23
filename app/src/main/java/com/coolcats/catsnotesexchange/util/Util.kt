@@ -1,17 +1,18 @@
 package com.coolcats.catsnotesexchange.util
 
-import android.app.AlertDialog
-import android.content.Context
 import android.util.Log
-import android.view.ContextThemeWrapper
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import com.coolcats.catsnotesexchange.R
+import com.coolcats.catsnotesexchange.mod.User
+import com.coolcats.catsnotesexchange.viewmodel.AppViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.user_info_fragment_layout.*
 
 class Util {
 
@@ -30,7 +31,10 @@ class Util {
             snackbar.show()
         }
 
+
+
         fun getUserDB(): DatabaseReference = FirebaseDatabase.getInstance().reference.child("Users")
-        fun getNotesDB(): DatabaseReference = FirebaseDatabase.getInstance().reference.child("Notes")
+        fun getNotesDB(): DatabaseReference =
+            FirebaseDatabase.getInstance().reference.child("Notes")
     }
 }
