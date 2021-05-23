@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.coolcats.catsnotesexchange.R
 import com.coolcats.catsnotesexchange.mod.User
 import com.coolcats.catsnotesexchange.util.Util.Companion.getUserDB
-import com.coolcats.catsnotesexchange.util.Util.Companion.myLog
 import com.coolcats.catsnotesexchange.util.Util.Companion.showError
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.new_user_fragment_layout.*
